@@ -13,7 +13,6 @@ body_class: "home-template user"
           {% if post.image %}
               <div class="image-holder show">
                 <a href="{{ post.url | prepend: site.baseurl }}" class="inner" style="background-image: url('{{ site.baseurl }}/content/images/{{ post.image }}');">
-                  <img src="{{ site.baseurl }}/content/images/{{ post.image }}">
               </a>
             </div>
           {% endif %}
