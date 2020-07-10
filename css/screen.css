@@ -420,7 +420,7 @@ article time, article time a {
     text-rendering: optimizeLegibility
 }
 article>header {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     text-rendering: optimizeLegibility
 }
 article>header h1 {
@@ -777,7 +777,7 @@ body.user article {
     position: relative;
     text-align: center;
     max-width: inherit;
-    margin-top: 50px;
+    margin-top: 30px;
     margin-bottom: 0px;
     border-bottom: 2px solid #f7f7f7
 }
