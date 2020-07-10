@@ -73,12 +73,17 @@ body_class: "home-template user"
 					templates: {
 						empty: 'no result',
 						{% raw %}
-						item: `<a href="{{url}}">
-							     <div>
-								   <b>{{title}}</b>
-								 </div>
-								 <div>{{content}}</div>
-							   </a>`
+						item: `
+      <article class="{%comment%}post_class{%endcomment%}">
+          <header>
+              <h1><a href="{{url}}">{{title}}</a></h1>
+          </header>
+
+          <div class="text">
+              <p>{{content}}</p>
+              <a href="{{url}}" class="readmore">Continue Reading</a>
+          </div>
+      </article>`
 						{% endraw %}
 					}
 				})
