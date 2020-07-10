@@ -7,6 +7,10 @@ body_class: "home-template user"
 <div class="page-content">
   <div class="wrapper">
     <div class="home">
+	  <div id="search-box">
+	  </div>
+	  <div id="hit">
+	  </div>
       {% for post in paginator.posts %}
       <article class="{%comment%}post_class{%endcomment%}">
 
@@ -41,3 +45,37 @@ body_class: "home-template user"
 {% include pagination.html %}
 
 {% include footer.html %}
+
+		<script>
+			//for search engine
+			const search = instantsearch({
+		  		appId: 'KENOTDNOEU',
+		  		apiKey: 'ae5cbc89dfcd6d7e2a37d67949f3ae1c',
+		  		indexName: 'manmarli',
+		  		routing: true
+			});
+
+			//for search box
+			search.addWidget(
+				instantsearch.widgets.searchBox({
+					container: '#search-box',
+					placeholder: 'search for something'
+				})
+			);
+
+			// for search result
+			search.addWidget(
+				instantsearch.widgets.hits({
+					container: '#hits',
+					templates: {
+						empty: 'no result',
+						{% raw %}
+						item: '<a href="{{url}}" class="results"><div><b>{{title}}</b></div><div>{{content}}</div></a>{{{_highlightResult.name.value}}}'
+						{% endraw %}
+					}
+				})
+			);
+
+			search.start();
+
+		</script>
