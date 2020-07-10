@@ -7,11 +7,13 @@ body_class: "home-template user"
 <div class="page-content">
   <div class="wrapper">
     <div class="home">
+
 	  <div id="search-box">
-		  <h3> hello </h3>
 	  </div>
+
 	  <div id="hits">
 	  </div>
+
       {% for post in paginator.posts %}
       <article class="{%comment%}post_class{%endcomment%}">
 
@@ -71,7 +73,12 @@ body_class: "home-template user"
 					templates: {
 						empty: 'no result',
 						{% raw %}
-						item: '<a href="{{url}}"><div><b>{{title}}</b></div><div>{{content}}</div></a>'
+						item: `<a href="{{url}}">
+							     <div>
+								   <b>{{title}}</b>
+								 </div>
+								 <div>{{content}}</div>
+							   </a>`
 						{% endraw %}
 					}
 				})
