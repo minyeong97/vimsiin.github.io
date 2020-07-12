@@ -1,6 +1,6 @@
 ---
 layout: post
-title: manpath: can't set the locale; make sure * and ko_KR.UTF-8 are correct
+title: manpath: can't set the locale make sure LC and LANG are correct
 categories: []
 ---
 
