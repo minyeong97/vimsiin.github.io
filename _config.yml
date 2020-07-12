@@ -22,3 +22,9 @@ gems:
 algolia:
     application_id: KENOTDNOEU
     index_name: manmarli
+    settings:
+        searchableAttributes:
+            - title
+            - unordered(content)
+            - collection,categories,tags
+            - headings
