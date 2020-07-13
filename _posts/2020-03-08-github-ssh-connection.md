@@ -66,3 +66,5 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDPJp45pz1Mk6JX1glUm/sOlj7T2iMwzd+WE23z9bEe
 ```
 
 이 내용을 그대로 복사해서 `github`에 복사하면 된다. 이것은 어디에서 찾냐면 오른쪽 프로필 사진을 클릭하면 아래쪽에 `setting`가 있다. 여기에서 `SSH and GPG keys`를 선택하고 `New SSH key`를 누르고 그곳에 복사하면 된다. 그렇게 되면 그 공개키에 해당하는 비밀키를 소지하고 있는 컴퓨터에서 github에 접근할 수 있다.
+
+그런데도 계속 비밀번호를 요구하는 것 같다면, 애초 연결을 `https`로 해놨기 때문이다. `github`에서는 연결을 하는 방식이 두 가지가 있는데, 한 가지는 `https`이고 다른 한 가지는 `ssh`이다. 비밀번호를 등록해놓았다고 하더라도 `https`를 사용하면 비밀번호를 요구하게 되므로, `ssh`를 사용해야 한다.
