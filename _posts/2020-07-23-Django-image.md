@@ -22,13 +22,17 @@ STATIC_URL = '/static/'
 
 `HTML` 템플렛의 맨 위에 다음과 같은 것을 쓴다.
 ```html
+{% raw %}
 {% load static %}
+{% endraw %}
 ```
 
 그런 다음 이미지 태그를 만들 때 다음과 같이 만든다.
 
 ```html
+{% raw %}
 <img src="{% static 'img/123.jpg' %}">
+{% endraw %}
 ```
 
 이때 작은 따옴표 안에 적는 경로는 방금 우리가 생성한 `static/`안에 있는 상대경로이다.
