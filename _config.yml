@@ -15,7 +15,7 @@ paginate: 5
 markdown: kramdown
 highlighter: rouge
 
-gems:
+plugins:
   - jekyll-sitemap
   - jekyll-paginate
 
