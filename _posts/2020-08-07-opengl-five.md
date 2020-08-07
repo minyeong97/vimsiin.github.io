@@ -40,7 +40,7 @@ Actual log file name is now: /run/user/1000/xpra/:1.log
 
 위와 같이 `Actual display used: :1` 이라고 나오는데, 이 디스플레이 번호를 잘 알아두어야 한다. 이렇게 실행을 시키고 나면, `local`에서 접속을 시도해야 한다. `mac`에서의 `Xpra` 인터페이스는 다음과 같이 생겼다.
 
-![](/img/'Screen Shot 2020-08-07 at 3.21.32 PM.png')
+![](https://lh3.googleusercontent.com/p2cOwlPOWMywgtctuPbLPf2d5U8RFHtuyMSzmrJQ3MUKro4abAKnfagPXi8n63Jl7fs6zduzv8Tt6SQ9b_4o95Dyc_PVtiWVv9f64PkrdZ8eyJA_OOWmUk9vzQScHEItJSt5ZmRDGw=w2400)
 
 여기에서 `connect`를 선택하면 다음과 같은 창이 뜬다.
 
