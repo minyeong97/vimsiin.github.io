@@ -48,4 +48,26 @@ Actual log file name is now: /run/user/1000/xpra/:1.log
 
 여기에서 `ssh`를 선택하고, 아이디와 아이피와 포트 넘버를 순서대로 적고 마지막 칸에는 아까 봤던 디스플레이 번호를 적는다. 그리고 연결을 누르면, 다음과 같이 우리의 `OpenGL` 프로젝트가 뜨게 된다!
 
+![](https://lh3.googleusercontent.com/k6qT8KnT0BUc1DL0QyR7ZHIRB8TjQ0DdGNxZQUwFSmJr628CjgEAs9lgrp9yHdWVA-2mfZjivcBO-uaOxk8YnuLMuS8ObIRJPfnZqHh1nY3iouSkWiGmlNxoMl30gMyf8ux9Axgjfw=w2400)
+
+그런데... 문제는 내가 썼던 프로그램은 분명 안에 사각형이 흰색이 아닌 오렌지색갈이었는데, 이상하게 하얀 색갈로 떴다. 분명 이것을 보고, `OpenGL`은 시작에 성공하였지만, 특정 `shader`가 컴파일에 실패했다는 감이 왔다. 그런데 컴파일 에러가 뜨면 오류 메세지를 출력하도록 만들어놨었는데, `Xpra` 서버로 열기 때문에 바로 보이지 않았다. 따라서, 로그 파일을 뒤져볼 수 밖에 없었다. 그래서 위의 터미널에서 나왔던 `/run/user/1000/xpra/:1.log` 파일을 뒤져보았다. 그랬더니 과연 다음과 같은 오류 메세지가 나와 있었다.
+
+```
+Failed to compile vertex shader!
+0:1(10): error: GLSL 3.30 is not supported. Supported versions are: 1.10, 1.20, 1.30, 1.00 ES, 3.00 ES, 3.10 ES, and 3.20 ES
+```
+
+역시 위와 같은 메세지들이 떠 있었다. 그래서 오래 찾은 겨로가 다음과 같은 `OpenGL` 버전 힌트를 넣었다. 
+
+```
+glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+```
+
+위의 코드는 우리가 `OpenGL` 버전 3.3을 사용할 것이라고 이야기해주는 것이었다. 3.3 버전부터는 `OpenGL`의 버전과 `GLSL`의 버전이 동일하기 때문에, 이 버전만 써 주어도 되는 것 같다. 여기에서 중요한 것은 이 코드를 `glfwInit()` 함수 이후, `glfwCreateWindow()` 전에 써주어야 한다는 것이다. 
+
+이렇게 했더니 드디어 제대로 컴파일 된 프로젝트가 화면 떳다.
+
 ![](https://lh3.googleusercontent.com/vatjRG1z7Y7Uo-bYIfczj_mfzD5xMHozFyAz5RhuVsRWAhdbyRFwVMax1huggoytiS2QWieqwzE6ekvLokmmFZJjYwNgDl6vBdQm9LN1l3xnmz2veEKvrK4Ol2wMknPYOAiGnbbCww=w2400)
+
