@@ -44,8 +44,8 @@ Actual log file name is now: /run/user/1000/xpra/:1.log
 
 여기에서 `connect`를 선택하면 다음과 같은 창이 뜬다.
 
-![](/img/'Screen Shot 2020-08-07 at 3.22.37 PM.png')
+![](https://lh3.googleusercontent.com/Acq4iUsjtf02mPOaFfv4tv9HxIpqKpLKR3nj1M1nQ0tnxLvXNYCqaJ1iP0JSUqJdm7SqUhovAPOmFC5kyuIvNOLnf_a06EIIH_zb4YRHoFvuwNDYb8mjxavhXgBY7auOkbo7za4HKw=w2400)
 
 여기에서 `ssh`를 선택하고, 아이디와 아이피와 포트 넘버를 순서대로 적고 마지막 칸에는 아까 봤던 디스플레이 번호를 적는다. 그리고 연결을 누르면, 다음과 같이 우리의 `OpenGL` 프로젝트가 뜨게 된다!
 
-![](/img/'Screen Shot 2020-08-07 at 3.23.17 PM.png')
+![](https://lh3.googleusercontent.com/vatjRG1z7Y7Uo-bYIfczj_mfzD5xMHozFyAz5RhuVsRWAhdbyRFwVMax1huggoytiS2QWieqwzE6ekvLokmmFZJjYwNgDl6vBdQm9LN1l3xnmz2veEKvrK4Ol2wMknPYOAiGnbbCww=w2400)
