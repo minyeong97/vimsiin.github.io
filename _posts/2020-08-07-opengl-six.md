@@ -1,7 +1,8 @@
 ---
 layout: post
 title: opengl six
-categories: [] ---
+categories: []
+---
 
 현재까지의 소스코드이다. 대부분 `learnopengl.com`에서 따왔다.
 
