@@ -17,6 +17,8 @@ categories: []
 먼저 `sudo`로 `ssh`를 설치한 다음에(블로그에 ssh 설치 방법이 있으니 검색 하길 바란다) 다음과 같은 명령어로 항상 켜놓게 만든다.
 
 ```
+sudo apt install openssh-server
+sudo service ssh start
 sudo systemctl enable ssh
 ```
 
@@ -24,10 +26,16 @@ sudo systemctl enable ssh
 
 ```
 sudo apt install zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+이렇게 했는데 만약 쉘이 아직 `bash`이면, 다음 명령을 실행한다.
+```
 chsh -s $(which zsh)
-sudo apt install curl
-sudo apt install git
-sh -c "$(curl .... #oh-my-zsh 설치 명령어
+sudo reboot
+```
+이제 필요한 기타 도구들을 모두 설치한다.
+```
+sudo apt-get install curl git tree ctags make cmake g++ locate apt-file tmux
 ```
 
 ### 4. nvim 설치
@@ -52,16 +60,11 @@ source ~/.vimrc
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ```
 
-### 5. 기타 설치
+### 5. 설정파일 가져오기
 
-```
-sudo apt install tmux
-sudo apt install ctags
-sudo apt install tree
-sudo apt install cmake
-sudo apt install make
-sudo apt install g++
-```
+`.tmux.conf` 파일과 `.zshrc` 파일과 `.vimrc` 파일을 모두 `github`에서 받아온다.
+
+### 6. 블로그 운영을 위해
 
 이 블로그를 운영해야 하므로, 
 
