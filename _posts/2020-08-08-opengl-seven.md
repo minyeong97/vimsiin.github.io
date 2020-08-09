@@ -302,25 +302,25 @@ lastTime = currentTime;
 
 속도에 이 `deltaTime`을 곱해서 움직임을 변화시켜야 한다. 여기에서 `lastTime`은 글로벌 변수로 미리 초기화시켜놓는 것이 좋다. 아니면 다음과 같이 함수가 처음 작동되었는지를 나타내는 `firstTime`이라는 `bool`을 정의해서 사용한다.
 ```c
-	if (firstTime) {
-		lastX = xpos;
-		lastY = ypos;
-		firstTime = false;
-	}
-
-	float xoffset = xpos - lastX;
-	float yoffset = -(ypos - lastY);
-
+if (firstTime) {
 	lastX = xpos;
 	lastY = ypos;
+	firstTime = false;
+}
 
-	yaw += xoffset * MouseSensitivity;
-	pitch += yoffset * MouseSensitivity;
+float xoffset = xpos - lastX;
+float yoffset = -(ypos - lastY);
 
-	if (pitch > 89.0f) pitch = 89.0f;
-	if (pitch < -89.0f) pitch = -89.0f;
+lastX = xpos;
+lastY = ypos;
 
-	update();
+yaw += xoffset * MouseSensitivity;
+pitch += yoffset * MouseSensitivity;
+
+if (pitch > 89.0f) pitch = 89.0f;
+if (pitch < -89.0f) pitch = -89.0f;
+
+update();
 ```
 
 
